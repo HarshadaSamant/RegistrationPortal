@@ -1,0 +1,71 @@
+<button mat-raised-button (click)="isEditable = !isEditable">
+    {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
+  </button>
+  
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <div class="field_wrapper">
+          <mat-form-field>
+            <input matInput placeholder="First name" formControlName="firstCtrl" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Middle name" formControlName="firstCtrl" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Last name" formControlName="firstCtrl" required>
+          </mat-form-field>
+        </div>
+        <div class="gender field_wrapper">
+          <label>Gender </label>
+          <mat-radio-group >
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <!-- <div [formGroup]="parts">
+          <input class="area" formControlName="area" size="3">
+          <span>&ndash;</span>
+          <input class="exchange" formControlName="exchange" size="3">
+          <span>&ndash;</span>
+          <input class="subscriber" formControlName="subscriber" size="4">
+        </div> -->
+        <!-- <mat-form-field>
+          <input matInput placeholder="Date of Birth" formControlName="dobCtrl" required>
+        </mat-form-field> -->
+        <div class="field_wrapper">
+          <mat-form-field class="example-full-width address_field">
+            <textarea matInput placeholder="Address"></textarea>
+          </mat-form-field>
+        </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Fill out your address</ng-template>
+        <div class="example-container">
+          <!-- <mat-form-field>
+            <input matInput placeholder="Enter your email" [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>     -->
+        </div>      
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+  

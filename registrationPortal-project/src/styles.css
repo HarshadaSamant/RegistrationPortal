@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.mat-stepper-horizontal {
+    overflow: hidden;
+    padding: 0 24px 24px 24px;
+    max-width: 70%;
+    margin: 0 auto;
+    border: 1px solid rgba(0,0,0,0.2) !important;
+    border-radius: 20px;
+}
+
+/* .ng-untouched.ng-pristine.ng-invalid.ng-star-inserted, */
+.mat-horizontal-content-container .ng-star-inserted {
+    /* display: flex;
+    flex-direction: column; */
+    width: 70%;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    width: 100%;
+}
+
+.mat-form-field {
+    margin-right: 15px;
+}
+
+.address_field {
+    margin-right: 0;
+    width: 70%;
+}
+
+.gender {
+    display: flex;
+    flex-direction: column;
+}
+
+.gender .mat-radio-button {
+    margin-right: 15px;
+}
